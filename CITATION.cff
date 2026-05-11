@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "oekaki_behavioural_exp: Drawing-task behavioral experiment program"
+message: "If you use this software in academic work, please cite it using the metadata below."
+version: "0.9.6"
+date-released: "2026-05-09"
+license: MIT
+type: software
+authors:
+  - name: Sayako Ueda
+  - name: Shun Sasaki
+keywords:
+  - behavioral-experiment

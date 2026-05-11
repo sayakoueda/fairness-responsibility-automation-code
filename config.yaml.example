@@ -1,0 +1,84 @@
+# oekaki_behavioural_exp configuration file (sample).
+#
+# Usage:
+#   1. Copy this file to `config.yaml`:
+#        cp config.yaml.example config.yaml
+#   2. Edit `config.yaml` for your experiment environment.
+#   3. Run the experiment. (If `config.yaml` is missing the loader
+#      raises FileNotFoundError.)
+#
+# Replaces the old settings.json + params.yaml pair.
+# Each top-level section maps to a dataclass in
+# src/oekaki_behavioural_exp/settings/app_config.py.
+
+# ------------------------------------------------------------------
+# display: screen / font settings
+# ------------------------------------------------------------------
+display:
+  # Intended drawing size (px). The program actually runs full-screen.
+  width: 960
+  height: 960
+  # Comma-separated font candidates. pygame.font.SysFont walks them in
+  # order via match_font and uses the first one it finds.
+  font: "hiraginosansgb,applegothic,applesdgothicneo,yugothic,meiryo,msgothic,bizudgothicbizudpgothictruetype,bizudgothicbizudpgothicboldtruetype,notosanscjkjp,notosansjp,ipagothic,vlgothic"
+
+# ------------------------------------------------------------------
+# system: application-wide settings
+# ------------------------------------------------------------------
+system:
+  fps: 100
+  version: 220823
+
+# ------------------------------------------------------------------
+# task: paths to display assets under Resources/
+# ------------------------------------------------------------------
+task:
+  brush_size: 8
+  bg_fig_paths:
+    Triangle: "Resources/ObjectTexture_Triangle_512_384_48.png"
+    Circle: "Resources/ObjectTexture_Circle_512_232.png"
+    Star: "Resources/ObjectTexture_Star_512_384_48.png"
+  kyouji_imgpaths:
+    - "Resources/Kyouji/a.png"
+    - "Resources/Kyouji/b.png"
+    - "Resources/Kyouji/c.png"
+    - "Resources/Kyouji/d.png"
+
+# ------------------------------------------------------------------
+# experiment: experiment-tunable parameters
+# (was the `common` section of the old params.yaml)
+# ------------------------------------------------------------------
+experiment:
+  # Set to true to disable the negative (-0.40) correction when the
+  # delayed observer data drifts unusually far.
+  aug_observer_data_option_01: true
+
+  # Number of frames the delayed avatar lags behind.
+  delay_frames: 15
+
+  # Per-scene durations (seconds).
+  rest_time: 10
+  before_task_time: 2
+  question_time: 8
+
+  # Geometry of the drawing circle.
+  circle_radius: 244
+  circle_threshold: 150
+  circle_width: 16
+
+  # Field and window sizes (px).
+  # margin = (window_size - field_size) // 2 is derived in code.
+  field_size: 512
+  window_size: 960
+
+# ------------------------------------------------------------------
+# corrector: cursor-correction factors
+# (was the `corrector` section of the old params.yaml)
+# ------------------------------------------------------------------
+corrector:
+  # Squared-distance threshold.
+  threshold: 10201
+  # Correction factor used in enhanced (e) trials – pulls toward the target circle.
+  correction_factor_enhanced: 0.70
+  # Correction factor used in delayed (d) trials – pushes away from the target circle.
+  correction_factor_adversarial: -0.40

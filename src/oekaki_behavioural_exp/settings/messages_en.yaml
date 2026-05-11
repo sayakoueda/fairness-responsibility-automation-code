@@ -1,0 +1,33 @@
+# English UI messages.
+# Keys are referenced from code (launch.py / scene.py / ui.py) via messages.t("key").
+# When you add a key here, add the same key to messages_ja.yaml.
+# (tests/test_messages.py verifies that ja/en have the same key set.)
+
+# ---- launch.py: startup dialog ----
+launch_id_input: "Enter participant ID\n [digits only]"
+launch_condition_select: "Select experimental condition\n[solo / social]"
+launch_pattern_select: "Select pattern\n"
+launch_pattern_select_solo: "Select pattern\n[a,b]"
+launch_pattern_select_social: "Select pattern\n[c,d]"
+launch_color_pattern_select: "Select color pattern\n(social only) [a,b]"
+
+# ---- scene.py: questionnaire (solo / social) ----
+# (Match the layout in the slider mockup: short label + range note + endpoint anchors.)
+scene_q_time: "Estimated duration"
+scene_q_time_range: "(0-20s)"
+scene_q_skill: "Performance"
+scene_q_skill_range: "(0-100)"
+scene_q_responsibility_solo: "Responsibility"
+scene_q_responsibility_social: "Responsibility"
+scene_responsibility_low: "Others"
+scene_responsibility_high: "Self"
+
+# ---- ui.py: common buttons / prompts ----
+ui_click_prompt: "Click here"
+ui_next: "Next"
+ui_time_range: "(0-20s)"
+
+# ---- Format strings (consumed by str.format()) ----
+# Keep units consistent with the range notes "(0-20s)" / "(0-100)".
+format_seconds: "{:>2d}s"
+format_points: "{:>3d}"

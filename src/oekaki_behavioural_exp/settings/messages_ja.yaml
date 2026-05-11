@@ -1,0 +1,31 @@
+# Japanese UI messages.
+# Keys are referenced from code (launch.py / scene.py / ui.py) via i18n.t("key").
+# When you add a key here, add the same key to messages_en.yaml.
+# (tests/test_messages.py verifies that ja/en have the same key set.)
+
+# ---- launch.py: startup dialog ----
+launch_id_input: "IDを入力してください。\n [数字のみ可能]"
+launch_condition_select: "実験の条件を選択してください\n[solo / social]"
+launch_pattern_select: "パターンを選択してください\n"
+launch_pattern_select_solo: "パターンを選択してください\n[a,b]"
+launch_pattern_select_social: "パターンを選択してください\n[c,d]"
+launch_color_pattern_select: "色のパターンを選択してください\n(socialの場合のみ) [a,b]"
+
+# ---- scene.py: questionnaire (solo) ----
+scene_q_time: "どのくらいの時間でしたか？"
+scene_q_time_range: "(0~20秒)"
+scene_q_skill: "どのくらいうまくできていましたか？"
+scene_q_skill_range: "(0~100点)"
+scene_q_responsibility_solo: "自分の成績の責任は\nどれほど自分にあると思いますか？"
+scene_q_responsibility_social: "相手との成績の違いの責任は\nどれほど自分にあると思いますか？"
+scene_responsibility_low: "自分のせいではない"
+scene_responsibility_high: "自分のせい"
+
+# ---- ui.py: common buttons / prompts ----
+ui_click_prompt: "クリックしてください"
+ui_next: "次へ"
+ui_time_range: "(0~20秒)"
+
+# ---- Format strings (consumed by str.format()) ----
+format_seconds: "{:>2d}秒"
+format_points: "{:>3d}点"
